@@ -7,7 +7,9 @@ import { Component } from '@stencil/core';
 export class PlotDetails {
   render() {
     return (
-      <div class="saao-plot-details"></div>
+      <div class="saao-plot-details">
+        <slot/>
+      </div>
     );
   }
 }
