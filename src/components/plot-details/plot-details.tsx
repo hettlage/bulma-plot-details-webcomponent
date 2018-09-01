@@ -2,7 +2,7 @@ import { Component } from '@stencil/core';
 
 @Component({
   tag: 'saao-plot-details',
-  styleUrl: 'saao-plot-details'
+  styleUrl: 'plot-details.css'
            })
 export class PlotDetails {
   render() {
