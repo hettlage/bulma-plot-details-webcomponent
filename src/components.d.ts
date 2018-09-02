@@ -31,10 +31,6 @@ declare global {
     interface SaaoPlotDetails {
 
     }
-
-    interface SaaoSmallPlot {
-
-    }
   }
 
 
@@ -54,20 +50,11 @@ declare global {
     };
     
 
-    interface HTMLSaaoSmallPlotElement extends StencilComponents.SaaoSmallPlot, HTMLStencilElement {}
-
-    var HTMLSaaoSmallPlotElement: {
-      prototype: HTMLSaaoSmallPlotElement;
-      new (): HTMLSaaoSmallPlotElement;
-    };
-    
-
   namespace JSX {
     interface Element {}
     export interface IntrinsicElements {
     'saao-large-plot': JSXElements.SaaoLargePlotAttributes;
     'saao-plot-details': JSXElements.SaaoPlotDetailsAttributes;
-    'saao-small-plot': JSXElements.SaaoSmallPlotAttributes;
     }
   }
 
@@ -80,22 +67,16 @@ declare global {
     export interface SaaoPlotDetailsAttributes extends HTMLAttributes {
 
     }
-
-    export interface SaaoSmallPlotAttributes extends HTMLAttributes {
-
-    }
   }
 
   interface HTMLElementTagNameMap {
     'saao-large-plot': HTMLSaaoLargePlotElement
     'saao-plot-details': HTMLSaaoPlotDetailsElement
-    'saao-small-plot': HTMLSaaoSmallPlotElement
   }
 
   interface ElementTagNameMap {
     'saao-large-plot': HTMLSaaoLargePlotElement;
     'saao-plot-details': HTMLSaaoPlotDetailsElement;
-    'saao-small-plot': HTMLSaaoSmallPlotElement;
   }
 }
 declare global { namespace JSX { interface StencilJSX {} } }
