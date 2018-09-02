@@ -1,7 +1,7 @@
 {
-  "name": "bulma-plot-details-webcomponent",
+  "name": "bulma-plot-webcomponent",
   "version": "0.0.1",
-  "description": "Web components for displaying plot details",
+  "description": "Web components for displaying a plot",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
