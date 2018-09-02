@@ -2,7 +2,7 @@ import { TestWindow } from '@stencil/core/testing';
 import { PlotModal } from './plot-modal';
 
 
-describe('LargePlot', () => {
+describe('PlotModal', () => {
   it('should load', () => {
     expect(new PlotModal()).toBeTruthy();
   });
