@@ -2,13 +2,13 @@ import { Component } from '@stencil/core';
 
 
 @Component({
-  tag: 'saao-large-plot',
-  styleUrl: 'large-plot.css'
+  tag: 'saao-plot-modal',
+  styleUrl: 'plot-modal.css'
            })
-export class LargePlot {
+export class PlotModal {
   render() {
     return (
-      <div class="saao-large-plot modal">
+      <div class="saao-plot modal">
         <div class="modal-background"/>
         <div class="modal-content">
           <slot/>
