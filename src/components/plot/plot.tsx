@@ -1,13 +1,13 @@
 import { Component } from '@stencil/core';
 
 @Component({
-  tag: 'saao-plot-details',
-  styleUrl: 'plot-details.css'
+  tag: 'saao-plot',
+  styleUrl: 'plot.css'
            })
-export class PlotDetails {
+export class Plot {
   render() {
     return (
-      <div class="saao-plot-details">
+      <div class="saao-plot">
         <slot/>
       </div>
     );

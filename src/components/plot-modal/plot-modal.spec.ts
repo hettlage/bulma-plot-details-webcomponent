@@ -1,28 +1,28 @@
 import { TestWindow } from '@stencil/core/testing';
-import { LargePlot } from './large-plot';
+import { PlotModal } from './plot-modal';
 
 
 describe('LargePlot', () => {
   it('should load', () => {
-    expect(new LargePlot()).toBeTruthy();
+    expect(new PlotModal()).toBeTruthy();
   });
 
   describe('rendering', () => {
     let testWindow: TestWindow;
-    let element: HTMLSaaoLargePlotElement;
+    let element: HTMLSaaoPlotModalElement;
 
     beforeEach(async () => {
       testWindow = new TestWindow();
       element = await testWindow.load({
-        components: [LargePlot],
-        html: `<saao-large-plot>
+        components: [PlotModal],
+        html: `<saao-plot-modal>
 <div class="child-content"></div>
-</saao-large-plot>`
+</saao-plot-modal>`
                                 });
     });
 
     it('should render elements with the correct classes', () => {
-      const modal = element.querySelector('div.saao-large-plot.modal');
+      const modal = element.querySelector('div.saao-plot.modal');
       expect(modal).toBeTruthy();
       expect(modal.querySelector('div.modal-background')).toBeTruthy();
       expect(modal.querySelector('div.modal-content')).toBeTruthy();

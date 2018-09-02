@@ -1,33 +1,32 @@
 import { TestWindow } from '@stencil/core/testing';
-import { PlotDetails } from './plot-details';
+import { Plot } from './plot';
 
-describe('PlotDetails', () => {
+describe('Plot', () => {
   it('should load', () => {
-    expect(new PlotDetails()).toBeTruthy();
+    expect(new Plot()).toBeTruthy();
   });
 
   describe('rendering', () => {
     let testWindow: TestWindow;
-    let element: HTMLSaaoPlotDetailsElement;
+    let element: HTMLSaaoPlotElement;
 
     beforeEach(async () => {
       testWindow = new TestWindow();
       element = await testWindow.load({
-        components: [PlotDetails],
-        html: `<saao-plot-details>
+        components: [Plot],
+        html: `<saao-plot>
 <div class="child-content"></div>
-</saao-plot-details>`
+</saao-plot>`
                                 })
     });
 
     it('should render a div with the correct class', () => {
-      expect(element.querySelector('div.saao-plot-details')).toBeTruthy();
+      expect(element.querySelector('div.saao-plot')).toBeTruthy();
     });
 
     it('should render child content correctly', () => {
-      const saaoPlotDetails = element.querySelector('div.saao-plot-details');
+      const saaoPlotDetails = element.querySelector('div.saao-plot');
       expect(saaoPlotDetails.querySelector('.child-content')).toBeTruthy();
     })
   })
 });
-

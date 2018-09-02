@@ -24,78 +24,59 @@ declare global {
 
   namespace StencilComponents {
 
-    interface SaaoLargePlot {
+    interface SaaoPlotModal {
 
     }
 
-    interface SaaoPlotDetails {
-
-    }
-
-    interface SaaoSmallPlot {
+    interface SaaoPlot {
 
     }
   }
 
 
-    interface HTMLSaaoLargePlotElement extends StencilComponents.SaaoLargePlot, HTMLStencilElement {}
+    interface HTMLSaaoPlotModalElement extends StencilComponents.SaaoPlotModal, HTMLStencilElement {}
 
-    var HTMLSaaoLargePlotElement: {
-      prototype: HTMLSaaoLargePlotElement;
-      new (): HTMLSaaoLargePlotElement;
+    var HTMLSaaoPlotModalElement: {
+      prototype: HTMLSaaoPlotModalElement;
+      new (): HTMLSaaoPlotModalElement;
     };
     
 
-    interface HTMLSaaoPlotDetailsElement extends StencilComponents.SaaoPlotDetails, HTMLStencilElement {}
+    interface HTMLSaaoPlotElement extends StencilComponents.SaaoPlot, HTMLStencilElement {}
 
-    var HTMLSaaoPlotDetailsElement: {
-      prototype: HTMLSaaoPlotDetailsElement;
-      new (): HTMLSaaoPlotDetailsElement;
-    };
-    
-
-    interface HTMLSaaoSmallPlotElement extends StencilComponents.SaaoSmallPlot, HTMLStencilElement {}
-
-    var HTMLSaaoSmallPlotElement: {
-      prototype: HTMLSaaoSmallPlotElement;
-      new (): HTMLSaaoSmallPlotElement;
+    var HTMLSaaoPlotElement: {
+      prototype: HTMLSaaoPlotElement;
+      new (): HTMLSaaoPlotElement;
     };
     
 
   namespace JSX {
     interface Element {}
     export interface IntrinsicElements {
-    'saao-large-plot': JSXElements.SaaoLargePlotAttributes;
-    'saao-plot-details': JSXElements.SaaoPlotDetailsAttributes;
-    'saao-small-plot': JSXElements.SaaoSmallPlotAttributes;
+    'saao-plot-modal': JSXElements.SaaoPlotModalAttributes;
+    'saao-plot': JSXElements.SaaoPlotAttributes;
     }
   }
 
   namespace JSXElements {
 
-    export interface SaaoLargePlotAttributes extends HTMLAttributes {
+    export interface SaaoPlotModalAttributes extends HTMLAttributes {
 
     }
 
-    export interface SaaoPlotDetailsAttributes extends HTMLAttributes {
-
-    }
-
-    export interface SaaoSmallPlotAttributes extends HTMLAttributes {
+    export interface SaaoPlotAttributes extends HTMLAttributes {
 
     }
   }
 
   interface HTMLElementTagNameMap {
-    'saao-large-plot': HTMLSaaoLargePlotElement
-    'saao-plot-details': HTMLSaaoPlotDetailsElement
-    'saao-small-plot': HTMLSaaoSmallPlotElement
+    'saao-plot-modal': HTMLSaaoPlotModalElement
+    'saao-plot': HTMLSaaoPlotElement
   }
 
   interface ElementTagNameMap {
-    'saao-large-plot': HTMLSaaoLargePlotElement;
-    'saao-plot-details': HTMLSaaoPlotDetailsElement;
-    'saao-small-plot': HTMLSaaoSmallPlotElement;
+    'saao-plot-modal': HTMLSaaoPlotModalElement;
+    'saao-plot': HTMLSaaoPlotElement;
   }
 }
 declare global { namespace JSX { interface StencilJSX {} } }
