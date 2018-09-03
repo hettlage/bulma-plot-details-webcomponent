@@ -25,8 +25,8 @@ describe('Plot', () => {
     });
 
     it('should render child content correctly', () => {
-      const saltastroPlotDetails = element.querySelector('div.saltastro-plot');
-      expect(saltastroPlotDetails.querySelector('.child-content')).toBeTruthy();
+      const plotDetails = element.querySelector('div.saltastro-plot');
+      expect(plotDetails.querySelector('.child-content')).toBeTruthy();
     })
   })
 });
