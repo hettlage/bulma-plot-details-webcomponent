@@ -40,15 +40,15 @@ describe('PlotInfo', () => {
                                             });
 
       // by default the plot info is invisible
-      expect(element.querySelector('.saltastro-plot-info.is-invisible')).toBeTruthy();
+      expect(element.classList).toContain('is-invisible');
 
       // toggle the visibility on
       element.toggle();
-      expect(element.querySelector('.saltastro-plot-info.is-invisible')).not.toBeTruthy();
+      expect(element.classList).not.toContain('is-invisible');
 
       // toggle the visibility off again
       element.toggle();
-      expect(element.querySelector('.saltastro-plot-info.is-invisible')).toBeTruthy();
+      expect(element.classList).toContain('is-invisible');
     })
   })
 });
