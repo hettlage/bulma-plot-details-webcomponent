@@ -24,78 +24,78 @@ declare global {
 
   namespace StencilComponents {
 
-    interface SaaoPlotInfo {
+    interface SaltastroPlotInfo {
       'toggle': () => void;
     }
 
-    interface SaaoPlotModal {
+    interface SaltastroPlotModal {
       'toggle': () => void;
     }
 
-    interface SaaoPlot {
+    interface SaltastroPlot {
 
     }
   }
 
 
-    interface HTMLSaaoPlotInfoElement extends StencilComponents.SaaoPlotInfo, HTMLStencilElement {}
+    interface HTMLSaltastroPlotInfoElement extends StencilComponents.SaltastroPlotInfo, HTMLStencilElement {}
 
-    var HTMLSaaoPlotInfoElement: {
-      prototype: HTMLSaaoPlotInfoElement;
-      new (): HTMLSaaoPlotInfoElement;
+    var HTMLSaltastroPlotInfoElement: {
+      prototype: HTMLSaltastroPlotInfoElement;
+      new (): HTMLSaltastroPlotInfoElement;
     };
     
 
-    interface HTMLSaaoPlotModalElement extends StencilComponents.SaaoPlotModal, HTMLStencilElement {}
+    interface HTMLSaltastroPlotModalElement extends StencilComponents.SaltastroPlotModal, HTMLStencilElement {}
 
-    var HTMLSaaoPlotModalElement: {
-      prototype: HTMLSaaoPlotModalElement;
-      new (): HTMLSaaoPlotModalElement;
+    var HTMLSaltastroPlotModalElement: {
+      prototype: HTMLSaltastroPlotModalElement;
+      new (): HTMLSaltastroPlotModalElement;
     };
     
 
-    interface HTMLSaaoPlotElement extends StencilComponents.SaaoPlot, HTMLStencilElement {}
+    interface HTMLSaltastroPlotElement extends StencilComponents.SaltastroPlot, HTMLStencilElement {}
 
-    var HTMLSaaoPlotElement: {
-      prototype: HTMLSaaoPlotElement;
-      new (): HTMLSaaoPlotElement;
+    var HTMLSaltastroPlotElement: {
+      prototype: HTMLSaltastroPlotElement;
+      new (): HTMLSaltastroPlotElement;
     };
     
 
   namespace JSX {
     interface Element {}
     export interface IntrinsicElements {
-    'saao-plot-info': JSXElements.SaaoPlotInfoAttributes;
-    'saao-plot-modal': JSXElements.SaaoPlotModalAttributes;
-    'saao-plot': JSXElements.SaaoPlotAttributes;
+    'saltastro-plot-info': JSXElements.SaltastroPlotInfoAttributes;
+    'saltastro-plot-modal': JSXElements.SaltastroPlotModalAttributes;
+    'saltastro-plot': JSXElements.SaltastroPlotAttributes;
     }
   }
 
   namespace JSXElements {
 
-    export interface SaaoPlotInfoAttributes extends HTMLAttributes {
+    export interface SaltastroPlotInfoAttributes extends HTMLAttributes {
 
     }
 
-    export interface SaaoPlotModalAttributes extends HTMLAttributes {
+    export interface SaltastroPlotModalAttributes extends HTMLAttributes {
 
     }
 
-    export interface SaaoPlotAttributes extends HTMLAttributes {
+    export interface SaltastroPlotAttributes extends HTMLAttributes {
 
     }
   }
 
   interface HTMLElementTagNameMap {
-    'saao-plot-info': HTMLSaaoPlotInfoElement
-    'saao-plot-modal': HTMLSaaoPlotModalElement
-    'saao-plot': HTMLSaaoPlotElement
+    'saltastro-plot-info': HTMLSaltastroPlotInfoElement
+    'saltastro-plot-modal': HTMLSaltastroPlotModalElement
+    'saltastro-plot': HTMLSaltastroPlotElement
   }
 
   interface ElementTagNameMap {
-    'saao-plot-info': HTMLSaaoPlotInfoElement;
-    'saao-plot-modal': HTMLSaaoPlotModalElement;
-    'saao-plot': HTMLSaaoPlotElement;
+    'saltastro-plot-info': HTMLSaltastroPlotInfoElement;
+    'saltastro-plot-modal': HTMLSaltastroPlotModalElement;
+    'saltastro-plot': HTMLSaltastroPlotElement;
   }
 }
 declare global { namespace JSX { interface StencilJSX {} } }

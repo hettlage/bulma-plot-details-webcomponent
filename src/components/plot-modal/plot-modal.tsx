@@ -2,7 +2,7 @@ import { Component, Method } from '@stencil/core';
 
 
 @Component({
-  tag: 'saao-plot-modal',
+  tag: 'saltastro-plot-modal',
   styleUrl: 'plot-modal.css'
            })
 export class PlotModal {
@@ -10,7 +10,7 @@ export class PlotModal {
 
   render() {
     return (
-      <div class="saao-plot modal" ref={(el) => this.modal = el}>
+      <div class="saltastro-plot modal" ref={(el) => this.modal = el}>
         <div class="modal-background"/>
         <div class="modal-content">
           <slot/>

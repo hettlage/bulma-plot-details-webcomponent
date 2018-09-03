@@ -2,7 +2,7 @@ import { Component, Method } from '@stencil/core';
 
 
 @Component({
-  tag: 'saao-plot-info',
+  tag: 'saltastro-plot-info',
   styleUrl: 'plot-info.css'
            })
 export class PlotInfo {
@@ -10,7 +10,7 @@ export class PlotInfo {
 
   render() {
     return (
-      <div class="saao-plot-info is-invisible" ref={(el) => this.plotInfo = el}>
+      <div class="saltastro-plot-info is-invisible" ref={(el) => this.plotInfo = el}>
         <slot/>
       </div>
     );

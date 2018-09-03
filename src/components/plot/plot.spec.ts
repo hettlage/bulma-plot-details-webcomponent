@@ -8,25 +8,25 @@ describe('Plot', () => {
 
   describe('rendering', () => {
     let testWindow: TestWindow;
-    let element: HTMLSaaoPlotElement;
+    let element: HTMLSaltastroPlotElement;
 
     beforeEach(async () => {
       testWindow = new TestWindow();
       element = await testWindow.load({
         components: [Plot],
-        html: `<saao-plot>
+        html: `<saltastro-plot>
 <div class="child-content"></div>
-</saao-plot>`
+</saltastro-plot>`
                                 })
     });
 
     it('should render a div with the correct class', () => {
-      expect(element.querySelector('div.saao-plot')).toBeTruthy();
+      expect(element.querySelector('div.saltastro-plot')).toBeTruthy();
     });
 
     it('should render child content correctly', () => {
-      const saaoPlotDetails = element.querySelector('div.saao-plot');
-      expect(saaoPlotDetails.querySelector('.child-content')).toBeTruthy();
+      const saltastroPlotDetails = element.querySelector('div.saltastro-plot');
+      expect(saltastroPlotDetails.querySelector('.child-content')).toBeTruthy();
     })
   })
 });
