@@ -22,7 +22,7 @@ describe('PlotModal', () => {
     });
 
     it('should render elements with the correct classes', () => {
-      const modal = element.querySelector('div.saltastro-plot.modal');
+      const modal = element.querySelector('div.modal');
       expect(modal).toBeTruthy();
       expect(modal.querySelector('div.modal-background')).toBeTruthy();
       expect(modal.querySelector('div.modal-content')).toBeTruthy();

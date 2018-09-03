@@ -10,7 +10,7 @@ export class PlotModal {
 
   render() {
     return (
-      <div class="saltastro-plot modal" ref={(el) => this.modal = el}>
+      <div class="modal" ref={(el) => this.modal = el}>
         <div class="modal-background"/>
         <div class="modal-content">
           <slot/>

@@ -14,9 +14,7 @@ export class PlotInfo {
 
   render() {
     return (
-      <div class="saltastro-plot-info">
-        <slot/>
-      </div>
+      <slot/>
     );
   }
 

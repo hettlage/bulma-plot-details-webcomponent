@@ -21,13 +21,8 @@ describe('PlotInfo', () => {
                                       })
     });
 
-    it('should render a div with the correct class', () => {
-      expect(element.querySelector('div.saltastro-plot-info')).toBeTruthy();
-    });
-
-    it('should render child content correctly', () => {
-      const plotInfo = element.querySelector('.saltastro-plot-info');
-      expect(plotInfo.querySelector('.child-content')).toBeTruthy();
+    it('should render child content', () => {
+      expect(element.querySelector('.child-content')).toBeTruthy();
     })
   });
 

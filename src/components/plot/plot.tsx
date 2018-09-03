@@ -7,9 +7,7 @@ import { Component } from '@stencil/core';
 export class Plot {
   render() {
     return (
-      <div class="saltastro-plot">
         <slot/>
-      </div>
     );
   }
 }
