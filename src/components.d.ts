@@ -29,7 +29,7 @@ declare global {
     }
 
     interface SaaoPlotModal {
-
+      'toggle': () => void;
     }
 
     interface SaaoPlot {
