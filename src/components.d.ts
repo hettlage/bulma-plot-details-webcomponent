@@ -25,11 +25,11 @@ declare global {
   namespace StencilComponents {
 
     interface SaaoPlotInfo {
-
+      'toggle': () => void;
     }
 
     interface SaaoPlotModal {
-
+      'toggle': () => void;
     }
 
     interface SaaoPlot {

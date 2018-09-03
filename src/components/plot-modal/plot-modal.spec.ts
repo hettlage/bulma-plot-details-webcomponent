@@ -33,5 +33,26 @@ describe('PlotModal', () => {
       const modalContent = element.querySelector('.modal-content');
       expect(modalContent.querySelector('.child-content')).toBeTruthy();
     });
+  });
+
+  describe('toggle', () => {
+    it('should toggle the is-active class', async () => {
+      const testWindow = new TestWindow();
+      const element = await testWindow.load({
+        components: [PlotModal],
+        html: '<saao-plot-modal></saao-plot-modal>'
+                                      });
+
+      // the modal is hidden by default
+      expect(element.querySelector('.modal.is-active')).not.toBeTruthy();
+
+      // toggle visibility on
+      element.toggle();
+      expect(element.querySelector('.modal.is-active')).toBeTruthy();
+
+      // toggle visibility off again
+      element.toggle();
+      expect(element.querySelector('.modal.is-active')).not.toBeTruthy();
+    })
   })
 });
