@@ -23,4 +23,9 @@ export class PlotInfo {
   @Method() toggle() {
     this.element.classList.toggle('is-invisible');
   }
+
+  @Method() move(x: number, y: number) {
+    this.element.style.left = `${x}px`;
+    this.element.style.top = `${y}px`;
+  }
 }
