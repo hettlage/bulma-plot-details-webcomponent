@@ -29,5 +29,26 @@ describe('PlotInfo', () => {
       const plotInfo = element.querySelector('.saao-plot-info');
       expect(plotInfo.querySelector('.child-content')).toBeTruthy();
     })
+  });
+
+  describe('toggle', () => {
+    it('should toggle the is-invisible class', async () => {
+      const testWindow = new TestWindow();
+      const element = await testWindow.load({
+        components: [PlotInfo],
+        html: '<saao-plot-info></saao-plot-info>'
+                                            });
+
+      // by default the plot info is invisible
+      expect(element.querySelector('.saao-plot-info.is-invisible')).toBeTruthy();
+
+      // toggle the visibility on
+      element.toggle();
+      expect(element.querySelector('.saao-plot-info.is-invisible')).not.toBeTruthy();
+
+      // toggle the visibility off again
+      element.toggle();
+      expect(element.querySelector('.saao-plot-info.is-invisible')).toBeTruthy();
+    })
   })
 });
