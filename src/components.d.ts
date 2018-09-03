@@ -25,6 +25,7 @@ declare global {
   namespace StencilComponents {
 
     interface SaltastroPlotInfo {
+      'move': (x: number, y: number) => void;
       'toggle': () => void;
     }
 

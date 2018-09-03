@@ -1,4 +1,4 @@
-import { Component, Method } from '@stencil/core';
+import { Component, Element, Method } from '@stencil/core';
 
 
 @Component({
@@ -6,17 +6,26 @@ import { Component, Method } from '@stencil/core';
   styleUrl: 'plot-info.css'
            })
 export class PlotInfo {
-  plotInfo: HTMLElement;
+  @Element() private element: HTMLSaltastroPlotInfoElement;
+
+  componentDidLoad() {
+    this.element.classList.add('is-invisible');
+  }
 
   render() {
     return (
-      <div class="saltastro-plot-info is-invisible" ref={(el) => this.plotInfo = el}>
+      <div class="saltastro-plot-info">
         <slot/>
       </div>
     );
   }
 
   @Method() toggle() {
-    this.plotInfo.classList.toggle('is-invisible');
+    this.element.classList.toggle('is-invisible');
+  }
+
+  @Method() move(x: number, y: number) {
+    this.element.style.left = `${x}px`;
+    this.element.style.top = `${y}px`;
   }
 }
