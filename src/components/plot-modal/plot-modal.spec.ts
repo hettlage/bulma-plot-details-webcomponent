@@ -9,20 +9,20 @@ describe('PlotModal', () => {
 
   describe('rendering', () => {
     let testWindow: TestWindow;
-    let element: HTMLSaaoPlotModalElement;
+    let element: HTMLSaltastroPlotModalElement;
 
     beforeEach(async () => {
       testWindow = new TestWindow();
       element = await testWindow.load({
         components: [PlotModal],
-        html: `<saao-plot-modal>
+        html: `<saltastro-plot-modal>
 <div class="child-content"></div>
-</saao-plot-modal>`
+</saltastro-plot-modal>`
                                 });
     });
 
     it('should render elements with the correct classes', () => {
-      const modal = element.querySelector('div.saao-plot.modal');
+      const modal = element.querySelector('div.saltastro-plot.modal');
       expect(modal).toBeTruthy();
       expect(modal.querySelector('div.modal-background')).toBeTruthy();
       expect(modal.querySelector('div.modal-content')).toBeTruthy();
@@ -40,7 +40,7 @@ describe('PlotModal', () => {
       const testWindow = new TestWindow();
       const element = await testWindow.load({
         components: [PlotModal],
-        html: '<saao-plot-modal></saao-plot-modal>'
+        html: '<saltastro-plot-modal></saltastro-plot-modal>'
                                       });
 
       // the modal is hidden by default
