@@ -7,16 +7,41 @@ import { Component, Element } from '@stencil/core';
 export class Plot {
   @Element() private element: HTMLSaltastroPlotElement;
 
-  showModal = () => {
-    Array.from(this.element.querySelectorAll('saltastro-plot-modal'))
-      .forEach((modal) => modal.show());
+  onClick = () => {
+    // hide plot info (if need be)
+    const plotModals = Array.from(this.element.querySelectorAll('saltastro-plot-modal'));
+
+    const plotInfos = Array.from(this.element.querySelectorAll('saltastro-plot-info'));
+    if (plotModals.length > 0) {
+      plotInfos.forEach((info) => info.hide());
+    }
+
+    // show modal
+    plotModals.forEach((modal) => modal.show());
+  };
+
+  onMouseMove = (e: MouseEvent) => {
+    Array.from(this.element.querySelectorAll('saltastro-plot-info'))
+      .forEach((info) => {
+        info.move(e.offsetX + PLOT_INFO_OFFSET_FROM_CURSOR.x, e.offsetY + PLOT_INFO_OFFSET_FROM_CURSOR.y);
+        info.show();
+      })
+  };
+
+  onMouseLeave = () => {
+    Array.from(this.element.querySelectorAll('saltastro-plot-info'))
+      .forEach((info) => {
+        info.hide();
+      });
   };
 
   render() {
     return (
-      <div  onClick={this.showModal}>
+      <div onClick={this.onClick} onMouseMove={this.onMouseMove} onMouseLeave={this.onMouseLeave}>
         <slot/>
       </div>
     );
   }
 }
+
+export const PLOT_INFO_OFFSET_FROM_CURSOR = { x: 10, y: 10 };
