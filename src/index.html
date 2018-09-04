@@ -7,10 +7,70 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
   <script src="/build/plotdetails.js"></script>
 
+  <script src="/build/bulmaplot.js"></script>
+  <style>
+    saltastro-plot > div {
+      min-height: 400px;
+      padding: 10px;
+      border: 1px solid lightgray;
+    }
+
+    .plots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 50px;
+    }
+  </style>
 </head>
 <body>
+<div class="plots">
+  <!-- Plot 1: both plot modal and plot info -->
+  <saltastro-plot>
+    <div>Plot 1</div>
+    <saltastro-plot-modal>
+      <div>
+        Here could be a larger version of the first plot.
+      </div>
+    </saltastro-plot-modal>
+    <saltastro-plot-info>
+      <div>
+        <p>This is plot info for the first plot.</p>
+        <p>And this is even more plot info for the first plot.</p>
+      </div>
+    </saltastro-plot-info>
+  </saltastro-plot>
 
-<saltastro-plot></saltastro-plot>
+  <!-- Plot 2: plot modal only -->
+  <saltastro-plot>
+    <div>Plot 2</div>
+    <saltastro-plot-info>
+      <div>
+        <p>This is plot info for the first plot.</p>
+        <p>And this is even more plot info for the first plot.</p>
+      </div>
+    </saltastro-plot-info>
+    <saltastro-plot-modal>
+      <div>
+        Here could be a larger version of the second plot.
+      </div>
+    </saltastro-plot-modal>
+  </saltastro-plot>
 
+  <!-- Plot 3: plot info only -->
+  <saltastro-plot>
+    <div>Plot 3</div>
+    <saltastro-plot-info>
+      <div>
+        <p>This is plot info for the third plot.</p>
+        <p>And this is even more plot info for the third plot.</p>
+      </div>
+    </saltastro-plot-info>
+  </saltastro-plot>
+
+  <!-- Plot 4: neither plot modal nor plot info -->
+  <saltastro-plot>
+    <div>Plot 3</div>
+  </saltastro-plot>
+</div>
 </body>
 </html>
