@@ -20,7 +20,11 @@ export class PlotModal {
     );
   }
 
-  @Method() toggle() {
-    this.modal.classList.toggle('is-active');
+  @Method() show() {
+    this.modal.classList.add('is-active');
+  }
+
+  @Method() hide() {
+    this.modal.classList.remove('is-active');
   }
 }

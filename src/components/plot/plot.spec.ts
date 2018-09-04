@@ -40,11 +40,11 @@ describe('Plot', () => {
 
     // click to display the modal
     const plotModal = element.querySelector('saltastro-plot-modal');
-    const toggle = jest.fn();
-    Object.defineProperty(plotModal, 'toggle', {value: toggle});
+    const show = jest.fn();
+    Object.defineProperty(plotModal, 'show', {value: show});
     const plotDiv = element.querySelector('div');
     plotDiv.click();
-    expect(toggle).toHaveBeenCalledTimes(1);
+    expect(show).toHaveBeenCalledTimes(1);
   });
 
   it('should not fail if there is no plot modal', async ()=> {

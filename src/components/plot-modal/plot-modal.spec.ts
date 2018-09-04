@@ -35,23 +35,45 @@ describe('PlotModal', () => {
     });
   });
 
-  describe('toggle', () => {
-    it('should toggle the is-active class', async () => {
+  describe('show', () => {
+    it('should add the is-active class', async () => {
       const testWindow = new TestWindow();
       const element = await testWindow.load({
         components: [PlotModal],
         html: '<saltastro-plot-modal></saltastro-plot-modal>'
                                       });
 
-      // the modal is hidden by default
+      // the modal is initially hidden
       expect(element.querySelector('.modal.is-active')).not.toBeTruthy();
 
-      // toggle visibility on
-      element.toggle();
+      // show the modal
+      element.show();
       expect(element.querySelector('.modal.is-active')).toBeTruthy();
 
-      // toggle visibility off again
-      element.toggle();
+      // calling show again makes no difference
+      element.show();
+      expect(element.querySelector('.modal.is-active')).toBeTruthy();
+    })
+  });
+
+  describe('hide', () => {
+    it('should remove the is-active class', async () => {
+      const testWindow = new TestWindow();
+      const element = await testWindow.load({
+                                              components: [PlotModal],
+                                              html: `<saltastro-plot-modal></saltastro-plot-modal>`
+                                            });
+
+      // ensure the modal is initially shown
+      element.show();
+      expect(element.querySelector('.modal.is-active')).toBeTruthy();
+
+      // hide the modal
+      element.hide();
+      expect(element.querySelector('.modal.is-active')).not.toBeTruthy();
+
+      // calling hide again makes no difference
+      element.hide();
       expect(element.querySelector('.modal.is-active')).not.toBeTruthy();
     })
   })

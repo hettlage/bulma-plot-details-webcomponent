@@ -7,14 +7,14 @@ import { Component, Element } from '@stencil/core';
 export class Plot {
   @Element() private element: HTMLSaltastroPlotElement;
 
-  toggleModal = () => {
+  showModal = () => {
     Array.from(this.element.querySelectorAll('saltastro-plot-modal'))
-      .forEach((modal) => modal.toggle());
+      .forEach((modal) => modal.show());
   };
 
   render() {
     return (
-      <div onClick={this.toggleModal}>
+      <div  onClick={this.showModal}>
         <slot/>
       </div>
     );
