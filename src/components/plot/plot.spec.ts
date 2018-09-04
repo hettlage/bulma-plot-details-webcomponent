@@ -6,7 +6,7 @@ import { PlotModal } from '../plot-modal/plot-modal';
 /**
  * A mouse event that can be dispatched in a unit test.
  *
- * The eventType should be any of the standard JavaScript mouse events (such as "mouseover" or "mouseleave").
+ * The event type should be any of the standard JavaScript mouse events (such as "mouseover" or "mouseleave").
  *
  * @param {TestWindow} testWindow
  * @param {string} eventType
@@ -139,7 +139,7 @@ describe('Plot', () => {
       expect(hide).toHaveBeenCalled();
     });
 
-    it('should not hide the plot when the plot is clicked but there is no plot modal', () => {
+    it('should not hide the plot info when the plot is clicked but there is no plot modal', () => {
       const hide = jest.fn();
       const plotInfo = element.querySelector('saltastro-plot-info');
       Object.defineProperty(plotInfo, 'hide', { value: hide });

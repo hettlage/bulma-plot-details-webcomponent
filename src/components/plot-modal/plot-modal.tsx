@@ -1,4 +1,4 @@
-import { Component, Method } from '@stencil/core';
+import { Component, Element, Method } from '@stencil/core';
 
 
 @Component({
@@ -6,7 +6,23 @@ import { Component, Method } from '@stencil/core';
   styleUrl: 'plot-modal.css'
            })
 export class PlotModal {
+  @Element() element: HTMLSaltastroPlotModalElement;
+
   modal: HTMLElement;
+
+  onClick = (e: MouseEvent) => {
+    if (e) e.stopPropagation();
+
+    // we call the hide method on the element (rather than this object), so that we can mock it in unit tests
+    this.element.hide();
+  };
+
+  onKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      // we call the hide method on the element (rather than this object), so that we can mock it in unit tests
+      this.element.hide();
+    }
+  };
 
   render() {
     return (
@@ -15,16 +31,20 @@ export class PlotModal {
         <div class="modal-content">
           <slot/>
         </div>
-        <button class="modal-close is-large" aria-label="close"/>
+        <button class="modal-close is-large" aria-label="close" onClick={this.onClick}/>
       </div>
     );
   }
 
   @Method() show() {
+    window.addEventListener('keydown', this.onKeyDown);
+
     this.modal.classList.add('is-active');
   }
 
   @Method() hide() {
+    window.removeEventListener('keydown', this.onKeyDown);
+
     this.modal.classList.remove('is-active');
   }
 }
