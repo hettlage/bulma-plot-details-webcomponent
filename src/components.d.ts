@@ -26,6 +26,9 @@ declare global {
 
     interface SaltastroPlotInfo {
       'hide': () => void;
+      /**
+       * Move the the plot info element to a given position.
+       */
       'move': (x: number, y: number) => void;
       'show': () => void;
     }

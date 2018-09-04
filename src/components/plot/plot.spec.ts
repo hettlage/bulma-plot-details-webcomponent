@@ -11,11 +11,15 @@ import { PlotModal } from '../plot-modal/plot-modal';
  * @param {TestWindow} testWindow
  * @param {string} eventType
  * @returns {MouseEvent}
+ * @param {number} clientX
+ * @param {number} clientY
  */
-function mouseEvent(testWindow: TestWindow, eventType: string) {
+function mouseEvent(testWindow: TestWindow, eventType: string, clientX: number=0, clientY: number=0) {
   return new (testWindow.window as any).MouseEvent(eventType, {
     bubbles: true,
-    cancelable: true
+    cancelable: true,
+    clientX,
+    clientY
   });
 }
 
@@ -104,21 +108,21 @@ describe('Plot', () => {
       plotModal = element.querySelector('saltastro-plot-info');
     });
 
-    it('should show and move the plot info when the cursor is moved over the plot', () => {
+    it('should show and move the plot info to the correct position when the cursor is moved over the plot', () => {
       const show = jest.fn();
       const move = jest.fn();
       Object.defineProperty(plotModal, 'show', { value: show });
       Object.defineProperty(plotModal, 'move', { value: move });
 
-      plotDiv.dispatchEvent(mouseEvent(testWindow, 'mousemove'));
+      plotDiv.dispatchEvent(mouseEvent(testWindow, 'mousemove', 400, 200));
       expect(show).toHaveBeenCalled();
-      expect(move).toHaveBeenCalled();
+      expect(move).toHaveBeenCalledWith(400 + PLOT_INFO_OFFSET_FROM_CURSOR.x, 200 + PLOT_INFO_OFFSET_FROM_CURSOR.y);
 
       show.mockClear();
       move.mockClear();
-      plotDiv.dispatchEvent(mouseEvent(testWindow, 'mousemove'));
+      plotDiv.dispatchEvent(mouseEvent(testWindow, 'mousemove', -80, -146));
       expect(show).toHaveBeenCalled();
-      expect(move).toHaveBeenCalled();
+      expect(move).toHaveBeenCalledWith(-80 + PLOT_INFO_OFFSET_FROM_CURSOR.x, -146 + PLOT_INFO_OFFSET_FROM_CURSOR.y);
     });
 
     it('should hide the plot when the mouse exits the plot', () => {

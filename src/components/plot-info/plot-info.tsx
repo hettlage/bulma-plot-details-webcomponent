@@ -26,6 +26,12 @@ export class PlotInfo {
     this.element.classList.add('is-invisible');
   }
 
+  /**
+   * Move the the plot info element to a given position.
+   *
+   * @param {number} x
+   * @param {number} y
+   */
   @Method() move(x: number, y: number) {
     this.element.style.left = `${x}px`;
     this.element.style.top = `${y}px`;

@@ -23,7 +23,7 @@ export class Plot {
   onMouseMove = (e: MouseEvent) => {
     Array.from(this.element.querySelectorAll('saltastro-plot-info'))
       .forEach((info) => {
-        info.move(e.offsetX + PLOT_INFO_OFFSET_FROM_CURSOR.x, e.offsetY + PLOT_INFO_OFFSET_FROM_CURSOR.y);
+        info.move(e.clientX + PLOT_INFO_OFFSET_FROM_CURSOR.x, e.clientY + PLOT_INFO_OFFSET_FROM_CURSOR.y);
         info.show();
       })
   };
