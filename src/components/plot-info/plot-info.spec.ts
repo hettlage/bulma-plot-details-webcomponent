@@ -26,23 +26,45 @@ describe('PlotInfo', () => {
     })
   });
 
-  describe('toggle', () => {
-    it('should toggle the is-invisible class', async () => {
+  describe('show', () => {
+    it('should remove the is-invisible class', async () => {
       const testWindow = new TestWindow();
       const element = await testWindow.load({
-        components: [PlotInfo],
-        html: '<saltastro-plot-info></saltastro-plot-info>'
+                                              components: [PlotInfo],
+                                              html: '<saltastro-plot-info></saltastro-plot-info>'
                                             });
 
-      // by default the plot info is invisible
+      // ensure the plot info initially is invisible
       expect(element.classList).toContain('is-invisible');
 
-      // toggle the visibility on
-      element.toggle();
+      // show the plot info
+      element.show();
       expect(element.classList).not.toContain('is-invisible');
 
-      // toggle the visibility off again
-      element.toggle();
+      // calling the show method again makes no difference
+      element.show();
+      expect(element.classList).not.toContain('is-invisible');
+    })
+  });
+
+  describe('hide', () => {
+    it('should add the is-invisible class', async () => {
+      const testWindow = new TestWindow();
+      const element = await testWindow.load({
+                                              components: [PlotInfo],
+                                              html: '<saltastro-plot-info></saltastro-plot-info>'
+                                            });
+
+      // ensure the plot info initially is visible
+      element.show();
+      expect(element.classList).not.toContain('is-invisible');
+
+      // hide the plot info
+      element.hide();
+      expect(element.classList).toContain('is-invisible');
+
+      // calling the hide method again makes no difference
+      element.hide();
       expect(element.classList).toContain('is-invisible');
     })
   });

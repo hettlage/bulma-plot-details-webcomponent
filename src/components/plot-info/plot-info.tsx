@@ -18,8 +18,12 @@ export class PlotInfo {
     );
   }
 
-  @Method() toggle() {
-    this.element.classList.toggle('is-invisible');
+  @Method() show() {
+    this.element.classList.remove('is-invisible');
+  }
+
+  @Method() hide() {
+    this.element.classList.add('is-invisible');
   }
 
   @Method() move(x: number, y: number) {
