@@ -125,6 +125,11 @@ describe('Plot', () => {
       expect(move).toHaveBeenCalledWith(-80 + PLOT_INFO_OFFSET_FROM_CURSOR.x, -146 + PLOT_INFO_OFFSET_FROM_CURSOR.y);
     });
 
+    it('should not show or move the plot info while the plot modal is shown', () => {
+      expect(false).toBe(true);
+      
+    });
+
     it('should hide the plot when the mouse exits the plot', () => {
       const hide = jest.fn();
       Object.defineProperty(plotModal, 'hide', { value: hide });
