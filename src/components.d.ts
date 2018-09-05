@@ -35,6 +35,7 @@ declare global {
 
     interface SaltastroPlotModal {
       'hide': () => void;
+      'isVisible': () => boolean;
       'show': () => void;
     }
 

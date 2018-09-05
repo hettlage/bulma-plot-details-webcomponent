@@ -78,6 +78,29 @@ describe('PlotModal', () => {
     })
   });
 
+  describe('isVisible', () => {
+    let testWindow: TestWindow;
+    let element: HTMLSaltastroPlotModalElement;
+
+    beforeEach(async () => {
+      testWindow = new TestWindow();
+      element = await testWindow.load({
+        components: [PlotModal],
+        html: '<saltastro-plot-modal></saltastro-plot-modal>'
+                                      });
+    });
+
+    it('returns true if the modal is shown', () => {
+      element.show();
+      expect(element.isVisible()).toBe(true);
+    });
+
+    it('returns false if the modal is not shown', () => {
+      element.hide();
+      expect(element.isVisible()).toBe(false);
+    })
+  });
+
   describe('interaction', () => {
     let testWindow: TestWindow;
     let element: HTMLSaltastroPlotModalElement;

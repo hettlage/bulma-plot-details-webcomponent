@@ -47,4 +47,8 @@ export class PlotModal {
 
     this.modal.classList.remove('is-active');
   }
+
+  @Method() isVisible() {
+    return this.modal.classList.contains('is-active');
+  }
 }
